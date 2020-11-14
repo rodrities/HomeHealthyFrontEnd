@@ -1,0 +1,82 @@
+{
+  "collaborators": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "username": "asd",
+      "role": "Trainer"
+    },
+    {
+      "id": 2,
+      "name": "John Doe",
+      "username": "u2",
+      "role": "Nutritionist"
+    },
+    {
+      "id": 3,
+      "name": "John Doe",
+      "username": "u3",
+      "role": "Nutritionist"
+    },
+    {
+      "id": 4,
+      "name": "John Doe",
+      "username": "u2",
+      "role": "Trainer"
+    },
+    {
+      "id": 5,
+      "name": "John Doe",
+      "username": "u2",
+      "role": "Nutritionist"
+    },
+    {
+      "id": 6,
+      "name": "John Doe",
+      "username": "u2",
+      "role": "Trainer"
+    },
+    {
+      "id": 7,
+      "name": "John Doe",
+      "username": "u2",
+      "role": "Nutritionist"
+    },
+    {
+      "id": 8,
+      "name": "John Doe",
+      "username": "u2",
+      "role": "Trainer"
+    },
+    {
+      "id": 9,
+      "name": "John Doe",
+      "username": "u2",
+      "role": "Nutritionist"
+    },
+    {
+      "id": 10,
+      "name": "John Doe",
+      "username": "u2",
+      "role": "Trainer"
+    },
+    {
+      "id": 11,
+      "name": "John Doe",
+      "username": "u2",
+      "role": "Nutritionist"
+    },
+    {
+      "id": 12,
+      "name": "John Doe",
+      "username": "u2",
+      "role": "Trainer"
+    },
+    {
+      "id": 13,
+      "name": "John Doe",
+      "username": "u2",
+      "role": "Nutritionist"
+    }
+  ]
+}

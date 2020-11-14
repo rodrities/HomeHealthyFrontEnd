@@ -1,0 +1,14 @@
+.default-spacer {
+  flex: 1 1 auto;
+}
+
+*{
+  background-color: green;
+}
+
+.menu-bar a {
+  text-decoration: none;
+  color: white;
+  margin-right: 15px;
+  background-color: rgba(0, 128, 0, 0.5);
+}

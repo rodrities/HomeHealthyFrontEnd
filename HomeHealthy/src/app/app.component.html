@@ -1,0 +1,21 @@
+<mat-toolbar color="basic">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Home Healthy</span>
+    <span class="default-spacer"></span>
+    <button mat-icon-button>
+      <mat-icon routerLink="/" routerLinkActive="active">home</mat-icon>
+
+    </button>
+    <span class="default-spacer"></span>
+    <div class="menu-bar">
+      <a mat-flat-button color="accent" routerLink="/diets" routerLinkActive="active">Diets</a>
+      <a mat-flat-button color="accent" routerLink="/routines" routerLinkActive="active">Routines</a>
+      <a mat-flat-button color="accent" routerLink="/providers" routerLinkActive="active">Providers</a>
+      <a mat-flat-button color="accent" routerLink="/sessions" routerLinkActive="active">Sessions</a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>
