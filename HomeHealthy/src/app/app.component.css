@@ -4,6 +4,7 @@
 
 *{
   background-color: green;
+
 }
 
 .menu-bar a {
@@ -11,4 +12,16 @@
   color: white;
   margin-right: 15px;
   background-color: rgba(0, 128, 0, 0.5);
+
+}
+
+.container-bar {
+  margin-bottom: 50px;
+}
+
+.side-button{
+  background-color: white;
+}
+.side-button:hover {
+  background-color: green;
 }

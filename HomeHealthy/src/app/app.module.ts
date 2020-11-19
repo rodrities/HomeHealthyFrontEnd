@@ -6,7 +6,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DietsComponent } from './pages/diets/diets.component';
 import { RoutinesComponent } from './pages/routines/routines.component';
-import { ProvidersComponent } from './pages/providers/providers.component';
 import { SessionsComponent } from './pages/sessions/sessions.component';
 
 
@@ -18,11 +17,22 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { HttpClientModule } from '@angular/common/http';
-
+import { StudentsComponent } from './pages/students/students.component';
+import { CollaboratorsComponent } from './pages/collaborators/collaborators.component';
+import { DietComponent } from './pages/diet/diet.component';
+import { RoutineComponent } from './pages/routine/routine.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import { DietDetailComponent } from './pages/diet-detail/diet-detail.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { CollaboratorProfileComponent } from './pages/collaborator-profile/collaborator-profile.component';
 
 
 @NgModule({
@@ -31,8 +41,15 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     DietsComponent,
     RoutinesComponent,
-    ProvidersComponent,
-    SessionsComponent
+    SessionsComponent,
+    StudentsComponent,
+    CollaboratorsComponent,
+    DietComponent,
+    RoutineComponent,
+    DietDetailComponent,
+    LoginComponent,
+    RegisterComponent,
+    CollaboratorProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +65,12 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     MatTableModule,
     MatPaginatorModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatListModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
