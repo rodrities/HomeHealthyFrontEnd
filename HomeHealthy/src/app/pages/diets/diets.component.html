@@ -1,0 +1,11 @@
+<div class="container">
+  <h2>TUS DIETAS:</h2>
+  <div  class="product-grid container">
+    <app-diet
+      *ngFor="let diet of diets"
+      (dietClicked)="clickDiet($event)"
+      [diet]="diet">
+    </app-diet>2
+  </div>
+</div>
+

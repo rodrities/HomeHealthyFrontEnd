@@ -1,0 +1,12 @@
+<mat-card class="container-card">
+  <mat-card-header>
+    <mat-card-title>{{ routine.title | uppercase }}</mat-card-title>
+  </mat-card-header>
+  <div class="crop-image">
+    <img src="assets/rutina.jpg" alt="">
+  </div>
+  <mat-card-actions class="container-actions">
+    <a  mat-raised-button class="button-detail" [routerLink]="['/routines', routine.id]">Ver detalle</a>
+  </mat-card-actions>
+</mat-card>
+

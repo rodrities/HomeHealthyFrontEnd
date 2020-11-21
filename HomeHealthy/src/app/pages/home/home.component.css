@@ -1,0 +1,26 @@
+.hero {
+  background-image: url("portada.jpg");
+
+  height: 800px;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  text-align: center;
+}
+
+.container-hero {
+  background-color: rgba(0, 128, 0, 0.5);
+
+  width: 700px;
+  height: 300px;
+  position: absolute;
+  right: 25%;
+  top: 30%;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: bold;
+  padding-top: 100px;
+
+}

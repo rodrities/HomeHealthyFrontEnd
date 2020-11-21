@@ -1,0 +1,28 @@
+*{
+  //border: solid 1px red;
+}
+.crop-image {
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.button-detail {
+  background-color: green;
+  margin-left: 50px;
+}
+.container-card {
+  border: solid 1px green;
+}
+.container-actions {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 50px;
+  margin-left: 33% ;
+}

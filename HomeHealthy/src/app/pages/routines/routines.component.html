@@ -1,0 +1,11 @@
+<div class="container">
+  <h2>TUS RUTINAS:</h2>
+  <div  class="product-grid container">
+    <app-routine
+      *ngFor="let routine of routines"
+      (routineClicked)="clickRoutine($event)"
+      [routine]="routine">
+    </app-routine>
+  </div>
+</div>
+
