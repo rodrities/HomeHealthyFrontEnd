@@ -1,1 +1,16 @@
 <h2>Profile</h2>
+
+<mat-card class="container-card">
+    <mat-card-header>
+        <mat-card-title>{{ id | uppercase }}</mat-card-title>
+    </mat-card-header>
+    <div class="crop-image">
+        <img src="assets/profile.png" alt="">
+    </div>
+
+    <mat-card-actions class="container-actions">
+        <!--<a  mat-raised-button class="button-detail" [routerLink]="['/collaborator', collaborator.id]">Ver detalle</a> -->
+        <!--<li *ngFor="let profile of studentData"></li>-->
+        <a  mat-raised-button class="button-detail" [routerLink]="['/collaborator']">Ver horarios</a>
+    </mat-card-actions>
+</mat-card>
