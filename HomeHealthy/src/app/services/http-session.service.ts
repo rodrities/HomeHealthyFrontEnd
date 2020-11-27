@@ -32,17 +32,16 @@ export class HttpDataService {
 
   getSession(id): Observable<Session>{
     return this.http.get<Session>(`${this.basePath}/customers/${id}/sessions`)
-      .pipe(retry(2), catchError(this.handleError));
+        .pipe(retry(2), catchError(this.handleError));
   }
 
   getCustomer(id): Observable<Customer>{
     return this.http.get<Customer>(`${this.basePath}/${id}`, this.httpOptions)
-      .pipe(retry(2), catchError(this.handleError));
+        .pipe(retry(2), catchError(this.handleError));
   }
 
   getDiet(sessionId): Observable<Diet>{
     return this.http.get<Diet>(`${this.basePath}/diets/sessions/\{id}?id=${sessionId}`, this.httpOptions)
-      .pipe(retry(2), catchError(this.handleError));
+        .pipe(retry(2), catchError(this.handleError));
   }
 }
-

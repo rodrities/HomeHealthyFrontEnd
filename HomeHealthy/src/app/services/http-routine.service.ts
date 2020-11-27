@@ -1,14 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
+import {Routine} from "../models/routine";
 
-import { Routine } from './../../models/routine';
-
-@Component({
-  selector: 'app-routines',
-  templateUrl: './routines.component.html',
-  styleUrls: ['./routines.component.css']
+@Injectable({
+  providedIn: 'root'
 })
-export class RoutinesComponent implements OnInit {
-
+export class HttpRoutineService {
   routines: Routine[] = [
     {
       id: '1',
@@ -41,16 +37,13 @@ export class RoutinesComponent implements OnInit {
       description: 'bla bla bla bla bla'
     },
   ];
-
   constructor() { }
 
-  ngOnInit() {
+  getAllRoutines() {
+    return this.routines;
   }
 
-  clickRoutine(id: number) {
-    console.log('routine');
-    console.log(id);
+  getRoutine(id: string) {
+    return this.routines.find(item => id === item.id);
   }
-
 }
-

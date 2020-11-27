@@ -15,8 +15,6 @@ import {RegisterComponent} from './pages/register/register.component';
 import {CollaboratorProfileComponent} from './pages/collaborator-profile/collaborator-profile.component';
 
 
-
-
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'diets', component: DietsComponent },

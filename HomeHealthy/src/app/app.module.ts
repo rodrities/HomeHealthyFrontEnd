@@ -35,6 +35,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { CollaboratorProfileComponent } from './pages/collaborator-profile/collaborator-profile.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,8 @@ import { CollaboratorProfileComponent } from './pages/collaborator-profile/colla
     DietDetailComponent,
     LoginComponent,
     RegisterComponent,
-    CollaboratorProfileComponent
+    CollaboratorProfileComponent,
+
   ],
   imports: [
     BrowserModule,

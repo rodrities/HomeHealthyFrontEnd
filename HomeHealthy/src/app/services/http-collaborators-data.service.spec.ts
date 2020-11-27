@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { HttpCollaboratosDataService } from './http-collaborators-data.service';
+import { HttpCollaboratorsDataService } from './http-collaborators-data.service';
 
-describe('HttpCollaboratosDataService', () => {
-  let service: HttpCollaboratosDataService;
+describe('HttpCollaboratorsDataService', () => {
+  let service: HttpCollaboratorsDataService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(HttpCollaboratosDataService);
+    service = TestBed.inject(HttpCollaboratorsDataService);
   });
 
   it('should be created', () => {
