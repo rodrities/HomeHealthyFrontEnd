@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "HomeHealthy"
+  "defaultProject": "HomeHealthy",
+  "cli": {
+    "analytics": "abc19355-24c7-4f06-9f38-d17eadfe63e6"
+  }
 }

@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'collaborators', component: CollaboratorsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'collaboratorprofile', component: CollaboratorProfileComponent },
+  { path: 'collaboratorprofile/:id', component: CollaboratorProfileComponent },
 ];
 
 @NgModule({

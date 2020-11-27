@@ -40,7 +40,7 @@
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef> Actions </th>
         <td mat-cell *matCellDef="let element">
-          <a  mat-raised-button class="text-button" [routerLink]="['/collaboratorprofile']">Ver perfil</a>
+          <a  mat-raised-button class="text-button" [routerLink]="['/collaboratorprofile',element.id]">Ver perfil</a>
         </td>
       </ng-container>
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
