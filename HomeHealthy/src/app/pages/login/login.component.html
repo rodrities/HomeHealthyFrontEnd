@@ -2,7 +2,7 @@
   <mat-card-header>
     <mat-card-title>Sign In</mat-card-title>
   </mat-card-header>
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <mat-card-content>
       <mat-form-field appearance="outline" class="form-field">
         <mat-label >Email</mat-label>
@@ -11,9 +11,9 @@
                type="email"
                placeholder="Ex. username@example.com"
                required>
-        <mat-error *ngIf="loginForm.controls.email.touched && loginForm.controls.email.invalid">
-          <span *ngIf="loginForm.controls.email.errors.required">E-mail is required</span>
-          <span *ngIf="loginForm.controls.email.errors.invalid">E-mail is invalid</span>
+        <mat-error *ngIf="form.controls.email.touched && form.controls.email.invalid">
+          <span *ngIf="form.controls.email.errors.required">E-mail is required</span>
+          <span *ngIf="form.controls.email.errors.invalid">E-mail is invalid</span>
         </mat-error>
       </mat-form-field>
       <mat-form-field appearance="outline" class="form-field">
@@ -24,15 +24,15 @@
                placeholder="Password"
                required
                minlength="6">
-        <mat-error *ngIf="loginForm.controls.password.touched && loginForm.controls.password.invalid">
-          <span *ngIf="loginForm.controls.password.errors.required">Password is required</span>
-          <span *ngIf="loginForm.controls.password.errors.minLength">Password must be at least 6 characters</span>
+        <mat-error *ngIf="form.controls.password.touched && form.controls.password.invalid">
+          <span *ngIf="form.controls.password.errors.required">Password is required</span>
+          <span *ngIf="form.controls.password.errors.minLength">Password must be at least 6 characters</span>
         </mat-error>
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions >
       <div class="container-actions">
-        <button class="button-login" mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Login</button>
+        <button class="button-login" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Login</button>
       </div>
     </mat-card-actions>
     <mat-card-content >
