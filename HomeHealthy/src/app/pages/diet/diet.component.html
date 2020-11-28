@@ -1,6 +1,6 @@
 <mat-card class="container-card">
   <mat-card-header>
-    <mat-card-title>{{ diet.title | uppercase }}</mat-card-title>
+    <mat-card-title>{{ diet.name | uppercase }}</mat-card-title>
   </mat-card-header>
   <div class="crop-image">
     <img src="assets/dieta.jpg" alt="">
@@ -9,4 +9,5 @@
     <a  mat-raised-button class="button-detail" [routerLink]="['/diets', diet.id]">Ver detalle</a>
   </mat-card-actions>
 </mat-card>
+
 

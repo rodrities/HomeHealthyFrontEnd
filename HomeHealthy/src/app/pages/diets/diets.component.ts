@@ -1,6 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 
 import { Diet } from './../../models/diet';
+import {HttpDietService} from '../../services/http-diet.service';
+import {Session} from '../../models/session';
+import {NgForm} from '@angular/forms';
+import {MatTableDataSource} from '@angular/material/table';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatSort} from '@angular/material/sort';
 
 @Component({
   selector: 'app-diets',
@@ -10,7 +16,7 @@ import { Diet } from './../../models/diet';
 
 export class DietsComponent implements OnInit {
 
-  diets: Diet[] = [
+  /*diets: Diet[] = [
     {
       id: '1',
       title: 'Camiseta',
@@ -41,16 +47,45 @@ export class DietsComponent implements OnInit {
       title: 'Stickers',
       description: 'bla bla bla bla bla'
     },
-  ];
+  ];*/
 
-  constructor() { }
+  @ViewChild('sessionForm', {static: false})
+  sessionForm: NgForm;
+  dietData: Diet;
+  dataSource = new MatTableDataSource();
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
-  ngOnInit() {
+  constructor(
+    private httpDietService: HttpDietService) {
+    this.dietData = {} as Diet;
+  }
+
+  ngOnInit(): void{
+    this.retrieveSessionByCustomer(1);
+  }
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
   }
 
   clickDiet(id: number) {
     console.log('diet');
     console.log(id);
   }
+
+  retrieveSessionByCustomer(id): void {
+    this.httpDietService.getAllProducts(id)
+      .subscribe((diet: any) => {
+        this.dataSource.data = diet.content;
+        console.log(this.dataSource.data);
+      });
+  }
+
+  /*fetchDiets() {
+    this.httpDietService.getAllProducts(1)
+      .subscribe( (diets: any) => {
+        this.diets = diets.content;
+      });
+  }*/
 
 }

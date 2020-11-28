@@ -19,9 +19,9 @@ export class DietDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.route.params.subscribe((params: Params) => {
+    /*this.route.params.subscribe((params: Params) => {
       const id = params.id;
-      this.diet = this.productsService.getDiet(id);
-    });
+      this.diet = this.productsService.getAllProducts(id);
+    });*/
   }
 }

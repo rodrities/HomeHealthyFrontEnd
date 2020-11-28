@@ -12,8 +12,8 @@ export class RoutinesComponent implements OnInit {
   routines: Routine[] = [
     {
       id: '1',
-      title: 'Musculacion',
-      description: 'Forjar los ricos muscles '
+      title: 'Camiseta',
+      description: 'bla bla bla bla bla'
     },
     {
       id: '2',
