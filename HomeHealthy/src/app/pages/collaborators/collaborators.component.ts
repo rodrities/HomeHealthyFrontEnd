@@ -19,7 +19,6 @@ interface Food {
   templateUrl: './collaborators.component.html',
   styleUrls: ['./collaborators.component.css']
 })
-
 export class CollaboratorsComponent implements OnInit, AfterViewInit {
   @ViewChild('studentForm', { static: false })
   studentForm: NgForm;
@@ -39,7 +38,7 @@ export class CollaboratorsComponent implements OnInit, AfterViewInit {
     this.studentData = {} as Collaborator;
   }
 
-  ngOnInit(): void{
+  ngOnInit(): void {
     this.dataSource.sort = this.sort;
     this.getAllStudents();
   }

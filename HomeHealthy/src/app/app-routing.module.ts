@@ -15,6 +15,8 @@ import {RegisterComponent} from './pages/register/register.component';
 import {CollaboratorProfileComponent} from './pages/collaborator-profile/collaborator-profile.component';
 
 
+
+
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'diets', component: DietsComponent },
@@ -27,7 +29,7 @@ const routes: Routes = [
   { path: 'collaborators', component: CollaboratorsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'collaboratorprofile/:id', component: CollaboratorProfileComponent },
+  { path: 'collaboratorprofile', component: CollaboratorProfileComponent },
 ];
 
 @NgModule({

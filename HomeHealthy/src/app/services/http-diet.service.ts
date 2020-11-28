@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 
 import { Diet } from './../models/diet';
+import {Observable} from 'rxjs';
+import {Customer} from '../models/customer';
 
 
 @Injectable({
@@ -9,7 +11,7 @@ import { Diet } from './../models/diet';
 })
 export class HttpDietService {
 
-  diets: Diet[] = [
+  /*diets: Diet[] = [
     {
       id: '1',
       title: 'Camiseta',
@@ -40,16 +42,29 @@ export class HttpDietService {
       title: 'Stickers',
       description: 'bla bla bla bla bla'
     },
-  ];
+  ];*/
 
-  constructor() { }
+  basePath = 'http://localhost:8080/api/diets';
+  constructor(private http: HttpClient) { }
+  // Http Default Options
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type' : 'application/json'
+    })
+  };
 
+  getAllProducts(id){
+    return this.http.get<Diet[]>(`${this.basePath}`);
+  }
+
+  /*
   getAllDiets() {
     return this.diets;
-  }
 
+  }
+*//*
   getDiet(id: string) {
     return this.diets.find(item => id === item.id);
-  }
+  }*/
 }
 

@@ -1,12 +1,30 @@
-<div class="container">
+<!--<div class="container">
   <h2>TUS DIETAS:</h2>
   <div  class="product-grid container">
     <app-diet
       *ngFor="let diet of diets"
       (dietClicked)="clickDiet($event)"
       [diet]="diet">
-
     </app-diet>2
   </div>
 </div>
+-->
+
+<div class="container">
+  <h2>Tus Dietas:</h2>
+  <mat-card>
+    <mat-card-content *ngFor="let data of dataSource.data">
+      <mat-card >
+        <mat-card-title>
+          {{ data.name }}
+        </mat-card-title>
+        <mat-card-content>
+          <p>Inicio: {{ data.description | date:'medium' }}</p>
+          <p>Final:  {{ data.duration | date:'medium' }}</p>
+        </mat-card-content>
+      </mat-card>
+    </mat-card-content>
+  </mat-card>
+</div>
+
 

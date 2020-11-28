@@ -8,14 +8,9 @@ import {catchError, retry} from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-
 export class HttpCollaboratorsDataService {
   // Students Endpoint
-  //basePath = 'http://homehealthyapi.herokuapp.com/api/collaborators';
-
   basePath = 'http://localhost:3000/api/collaborators';
-
-
   constructor(private http: HttpClient) { }
   // Http Default Options
   httpOptions = {
