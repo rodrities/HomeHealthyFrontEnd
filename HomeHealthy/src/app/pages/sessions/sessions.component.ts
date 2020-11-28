@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
-import {HttpDataService} from '../../services/http-session.service';
+import {HttpSessionService} from '../../services/http-session.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import * as _ from 'lodash';
@@ -17,7 +17,6 @@ import {timestamp} from 'rxjs/operators';
 })
 
 
-
 export class SessionsComponent implements OnInit, AfterViewInit {
 
   @ViewChild('sessionForm', {static: false})
@@ -32,7 +31,7 @@ export class SessionsComponent implements OnInit, AfterViewInit {
   private aux2: Date;
 
 
-  constructor(private httpDataService: HttpDataService, private router: Router) {
+  constructor(private HttpSessionService: HttpSessionService, private router: Router) {
     this.sessionData = {} as Session;
   }
 
@@ -45,7 +44,7 @@ export class SessionsComponent implements OnInit, AfterViewInit {
   }
 
   retrieveSessionByCustomer(id): void {
-    this.httpDataService.getSession(id)
+    this.HttpSessionService.getSession(id)
       .subscribe((session: any) => {
         this.dataSource.data = session.content;
         console.log(this.dataSource.data);

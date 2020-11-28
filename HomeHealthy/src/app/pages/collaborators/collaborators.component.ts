@@ -23,7 +23,7 @@ interface Food {
 export class CollaboratorsComponent implements OnInit, AfterViewInit {
   @ViewChild('studentForm', { static: false })
   studentForm: NgForm;
-  studentData: Collaborator;
+  collaboratorData: Collaborator;
   dataSource = new MatTableDataSource();
   displayedColumns: string[] = ['id', 'name', 'username', 'role', 'actions'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -36,7 +36,7 @@ export class CollaboratorsComponent implements OnInit, AfterViewInit {
   ];
 
   constructor(private httpDataService: HttpCollaboratorsDataService, private router: Router) {
-    this.studentData = {} as Collaborator;
+    this.collaboratorData = {} as Collaborator;
   }
 
   ngOnInit(): void{
@@ -55,14 +55,14 @@ export class CollaboratorsComponent implements OnInit, AfterViewInit {
     }
   }
   getAllStudents(): void {
-    this.httpDataService.getList().subscribe((response: any) => {
-      this.dataSource.data = response;
+    this.httpDataService.getList().subscribe((collaborator: any) => {
+      this.dataSource.data = collaborator.content;
       console.log(this.dataSource.data);
     });
   }
   editItem(element): void {
     console.log(element);
-    this.studentData = _.cloneDeep(element);
+    this.collaboratorData = _.cloneDeep(element);
     this.isEditMode = true;
   }
   cancelEdit(): void {
@@ -78,7 +78,7 @@ export class CollaboratorsComponent implements OnInit, AfterViewInit {
     console.log(this.dataSource.data);
   }
   updateStudent(): void {
-    this.httpDataService.updateItem(this.studentData.id, this.studentData)
+    this.httpDataService.updateItem(this.collaboratorData.id, this.collaboratorData)
       .subscribe((response: any) => {
         this.dataSource.data = this.dataSource.data.map((o: Collaborator) => {
           if (o.id === response.id) {

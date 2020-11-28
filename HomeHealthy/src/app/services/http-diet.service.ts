@@ -7,6 +7,7 @@ import { Diet } from './../models/diet';
 @Injectable({
   providedIn: 'root'
 })
+
 export class HttpDietService {
 
   diets: Diet[] = [

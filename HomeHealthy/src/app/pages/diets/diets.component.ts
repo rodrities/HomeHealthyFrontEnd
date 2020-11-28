@@ -7,6 +7,7 @@ import { Diet } from './../../models/diet';
   templateUrl: './diets.component.html',
   styleUrls: ['./diets.component.css']
 })
+
 export class DietsComponent implements OnInit {
 
   diets: Diet[] = [
