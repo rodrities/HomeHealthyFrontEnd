@@ -75,8 +75,8 @@ export class DietsComponent implements OnInit {
 
   retrieveSessionByCustomer(id): void {
     this.httpDietService.getAllProducts(id)
-      .subscribe((diet: any) => {
-        this.dataSource.data = diet.content;
+      .subscribe((Diet: any) => {
+        this.dataSource.data = Diet.content;
         console.log(this.dataSource.data);
       });
   }

@@ -8,6 +8,10 @@ import { HttpDataService } from '../../services/http-data.service';
 import * as _ from 'lodash';
 import {Router} from '@angular/router';
 import {HttpCollaboratorsDataService} from '../../services/http-collaborators-data.service';
+import {dialogAdd} from "./dialogAdd";
+import {dialogEdit} from "./dialogEdit";
+import {dialogDelete} from "./dialogDelete";
+import {MatDialog} from "@angular/material/dialog";
 
 interface Food {
   value: string;
@@ -19,10 +23,15 @@ interface Food {
   templateUrl: './collaborators.component.html',
   styleUrls: ['./collaborators.component.css']
 })
+
 export class CollaboratorsComponent implements OnInit, AfterViewInit {
   @ViewChild('studentForm', { static: false })
+  dialogEdit:dialogEdit;
+  dialogDelete:dialogDelete;
   studentForm: NgForm;
   collaboratorData: Collaborator;
+  // items:[];
+  // collaboratorDataEdit: [];
   dataSource = new MatTableDataSource();
   displayedColumns: string[] = ['id', 'name', 'username', 'role', 'actions'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -34,8 +43,13 @@ export class CollaboratorsComponent implements OnInit, AfterViewInit {
     {value: 'role-1', viewValue: 'Nutritionist'}
   ];
 
-  constructor(private httpDataService: HttpCollaboratorsDataService, private router: Router) {
+  constructor(
+              private httpDataService: HttpCollaboratorsDataService,
+              private router: Router,
+              public dialog: MatDialog,
+              ) {
     this.collaboratorData = {} as Collaborator;
+
   }
 
   ngOnInit(): void {
@@ -55,7 +69,8 @@ export class CollaboratorsComponent implements OnInit, AfterViewInit {
   }
   getAllStudents(): void {
     this.httpDataService.getList().subscribe((collaborator: any) => {
-      this.dataSource.data = collaborator.content;
+      this.dataSource.data = collaborator;
+      console.log(collaborator);
       console.log(this.dataSource.data);
     });
   }
@@ -88,14 +103,136 @@ export class CollaboratorsComponent implements OnInit, AfterViewInit {
         this.cancelEdit();
       });
   }
+
   navigateToAddStudent(): void {
     this.router.navigate(['/collaborators/new']).then(() => null);
   }
   navigateToEditStudent(studentId): void {
     this.router.navigate([`/collaborators/${studentId}`]).then(() => null);
+
   }
-  refresh(): void {
+  editMode():void{
+    this.isEditMode = true;
+  }
+
+  Refresh(): void {
     console.log('about to reload');
     this.getAllStudents();
   }
+
+  // animal: string;
+  // name: string;
+
+  id: number;
+  name: string;
+  username: string;
+  role: string;
+  // openDialog():void{
+  //   this.animal = this.dialog.animal;
+  //   this.name = this.dialog.name;
+  //   this.dialog.openDialog();
+  // }
+
+  openDialogAdd(): void {
+    const dialogRef = this.dialog.open(dialogAdd, {
+      // height: '400px',
+      // width: '800px',
+      data: {
+        id: this.id,
+        name: this.name,
+        username: this.username,
+        role: this.role
+      }
+
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(`Dialog result: ${result}`);
+      if(result == 'pizza'){
+        console.log(`Dialog result: ${result}`);
+      }else{this.save(result);}
+
+    });
+
+    // this.httpDataService.createItem(collaboratorData)
+    //         .subscribe((response: any) => {
+    //         });
+  }
+
+  save(item){
+    this.httpDataService.createItem(item)
+            .subscribe((response: any) => {
+              this.Refresh();
+            });
+
+  }
+
+  openDialogEdit(id,item): void{
+
+    const dialogRef = this.dialog.open(dialogEdit, {
+      // height: '400px',
+      // width: '800px',
+       data:item
+    });
+    // this.dialogEdit.showEdit(this.collaboratorDataEdit);
+    // console.log(id);
+    // console.log(item);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      if(result == 'pizza'){
+        console.log(`Dialog result: ${result}`);
+      }else{this.update(result);}
+
+    });
+
+  }
+
+  update(item){
+    // console.log(item);
+    this.httpDataService.updateItem(item.id,item)
+        .subscribe((response: any) => {
+          this.Refresh();
+        });
+  }
+
+
+  openDialogDelete(id): void{
+
+    const dialogRef = this.dialog.open(dialogDelete, {
+      // height: '400px',
+      // width: '800px',
+      data:{
+        id: id
+      }
+    });
+
+    // this.dialogEdit.showEdit(this.collaboratorDataEdit);
+    // console.log(id);
+    // console.log(item);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      if(result == 'pizza'){
+        console.log(`Dialog result: ${result}`);
+      }else{
+        // console.log(result);
+        this.delete(result);
+      }
+
+    });
+
+  }
+
+  delete(id){
+
+    this.httpDataService.deleteItem(id)
+        .subscribe((response: any) => {
+          this.Refresh();
+        });
+  }
+
 }
+
+

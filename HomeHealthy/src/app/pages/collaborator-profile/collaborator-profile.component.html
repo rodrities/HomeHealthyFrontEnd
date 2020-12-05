@@ -1,1 +1,16 @@
 <h2>Profile</h2>
+<mat-card class="container-card">
+    <mat-card-header>
+<!--        <mat-card-title>{{ diet.name | uppercase }}</mat-card-title>-->
+    </mat-card-header>
+    <div class="crop-image">
+        <img src="assets/profile.png" alt="">
+    </div>
+    <mat-card-actions class="container-actions">
+<!--        <a  mat-raised-button class="button-detail" [routerLink]="['/diets', diet.id]">Ver detalle</a>-->
+        <div>
+<!--            <button *ngIf="!sessionIsActive(data.startAt , data.endAt)" mat-raised-button disabled>Session Ended</button>-->
+            <button class="button-session" *ngClick="singup()" mat-raised-button >Enter Session</button>
+        </div>
+    </mat-card-actions>
+</mat-card>

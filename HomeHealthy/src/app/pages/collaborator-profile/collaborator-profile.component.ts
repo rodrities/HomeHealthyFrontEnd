@@ -19,4 +19,12 @@ export class CollaboratorProfileComponent implements OnInit {
   ngOnInit() {
   }
 
+  // test(id): void {
+  //   this.httpRegisterService.createdRegister()
+  //       .subscribe((register: any) => {
+  //         this.dataSource.data = register.content;
+  //         console.log(this.dataSource.data);
+  //       });
+  // }
+
 }

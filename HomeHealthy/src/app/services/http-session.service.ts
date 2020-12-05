@@ -9,7 +9,8 @@ import {Diet} from './../models/diet';
 @Injectable({
   providedIn: 'root'
 })
-export class HttpDataService {
+
+export class HttpSessionService {
 
   basePath = 'http://localhost:8080/api';
   constructor(private http: HttpClient) { }

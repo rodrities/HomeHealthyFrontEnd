@@ -34,6 +34,11 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { CollaboratorProfileComponent } from './pages/collaborator-profile/collaborator-profile.component';
 
+import { dialogAdd } from './pages/collaborators/dialogAdd';
+import { dialogEdit } from './pages/collaborators/dialogEdit';
+import { dialogDelete } from './pages/collaborators/dialogDelete';
+import {MatDialogModule} from "@angular/material/dialog";
+
 
 @NgModule({
   declarations: [
@@ -49,7 +54,10 @@ import { CollaboratorProfileComponent } from './pages/collaborator-profile/colla
     DietDetailComponent,
     LoginComponent,
     RegisterComponent,
-    CollaboratorProfileComponent
+    CollaboratorProfileComponent,
+    dialogAdd,
+    dialogEdit,
+    dialogDelete
   ],
   imports: [
     BrowserModule,
@@ -70,7 +78,8 @@ import { CollaboratorProfileComponent } from './pages/collaborator-profile/colla
     MatMenuModule,
     MatSidenavModule,
     MatListModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

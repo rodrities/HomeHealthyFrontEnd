@@ -1,0 +1,41 @@
+<mat-card class="mat-card">
+    <mat-card-header>
+        <mat-card-title>
+            <span class="headline">Edit Collaborator</span>
+        </mat-card-title>
+    </mat-card-header>
+    <!--     <li *ngIf="name">-->
+    <!--      You chose: <i>{{name}}</i>-->
+    <mat-card-content class="mat-card-content">
+        <mat-form-field class="mat-form-field">
+            <mat-label>id</mat-label>
+            <!--        <input matInput [(ngModel)]="collaboratorData.animal">-->
+            <input matInput [(ngModel)]="collaboratorDataEdit.id">
+        </mat-form-field>
+
+        <mat-form-field class="mat-form-field">
+            <mat-label>name</mat-label>
+            <!--        <input matInput [(ngModel)]="collaboratorData.animal">-->
+            <input matInput [(ngModel)]="collaboratorDataEdit.name">
+        </mat-form-field>
+
+        <mat-form-field class="mat-form-field">
+            <mat-label>username</mat-label>
+            <!--        <input matInput [(ngModel)]="collaboratorData.animal">-->
+            <input matInput [(ngModel)]="collaboratorDataEdit.username">
+        </mat-form-field>
+
+        <mat-form-field class="mat-form-field">
+            <mat-label>role</mat-label>
+            <!--        <input matInput [(ngModel)]="collaboratorData.animal">-->
+            <input matInput [(ngModel)]="collaboratorDataEdit.role">
+        </mat-form-field>
+
+    </mat-card-content>
+
+    <mat-card-actions>
+        <!--        <mat-s></mat-s>-->
+        <button mat-button (click)="onNoClick()">No Thanks</button>
+        <button mat-button [mat-dialog-close]="collaboratorDataEdit.name" (click)="update(collaboratorDataEdit)"cdkFocusInitial>Update</button>
+    </mat-card-actions>
+</mat-card>

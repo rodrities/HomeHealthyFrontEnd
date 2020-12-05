@@ -39,6 +39,7 @@ export class SessionsComponent implements OnInit, AfterViewInit {
     this.dataSource.sort = this.sort;
     this.retrieveSessionByCustomer(1);
   }
+  
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
   }
